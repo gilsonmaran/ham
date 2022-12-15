@@ -1,11 +1,26 @@
+.limit {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.mt-5 {
+    margin-top: 1rem;
+}
+
+.header {
+    margin: 0.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+}
+
+hr {
+    margin: 1rem 0;
+}
+
 @media print {
     .no-print {
         display: none;
     }
-}
-
-input {
-    border: none !important;
-    border-radius: 0;
-    border-bottom: 1px solid #eee !important;
 }

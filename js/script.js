@@ -8,32 +8,27 @@ function chart() {
         t = 26 + i;
 
         result_data[i] = age == t ? result : null
-            // if (age == t)
-            //     result_data[i] = result
-            // else
-            //     result_data[i] = null
     }
 
     let chart = new Chart(ctx, {
-        // The type of chart we want to create
         type: 'line',
 
-
-        // The data for our dataset
         data: {
             labels: [26, '', 28, '', 30, '', 32, '', 34, '', 36, '', 38, '', 40, '', 42, '', 44],
 
             datasets: [{
                     label: 'Resultado',
                     backgroundColor: '#FFF',
+                    fill: true,
                     borderColor: '#000',
-                    pointRadius: 3,
+                    pointRadius: 4,
                     lineTension: 0,
                     data: result_data
                 },
                 {
                     label: '< 25% | Baixa reserva ovariana',
-                    backgroundColor: '#DC3545',
+                    backgroundColor: '#9BD0F5',
+                    fill: true,
                     borderColor: '#000',
                     pointRadius: 0,
                     lineTension: 0,
@@ -44,6 +39,7 @@ function chart() {
                 {
                     label: '25 - 75% | Reserva ovariana normal',
                     backgroundColor: '#28A745',
+                    fill: true,
                     borderColor: '#000',
                     pointRadius: 0,
                     lineTension: 0,
@@ -54,6 +50,7 @@ function chart() {
                 {
                     label: '> 75% | Provável SOP',
                     backgroundColor: 'rgb(255,193,7)',
+                    fill: true,
                     borderColor: '#000',
                     pointRadius: 0,
                     lineTension: 0,
@@ -67,8 +64,9 @@ function chart() {
         // Configuration options go here
         options: {
             maintainAspectRatio: false,
+
             scales: {
-                yAxes: [{
+                y: {
                     ticks: {
                         max: 14,
                         min: 0,
@@ -78,8 +76,8 @@ function chart() {
                         display: true,
                         z: 2,
                     },
-                }],
-                xAxes: [{
+                },
+                x: {
                     stacked: false,
                     gridLines: {
                         display: true,
@@ -88,7 +86,7 @@ function chart() {
                     ticks: {
                         stepSize: 2
                     }
-                }],
+                },
             },
 
             legend: {
